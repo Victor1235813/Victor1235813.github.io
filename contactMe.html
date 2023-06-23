@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Victor's Home Page</title>
+</head>
+<body>
+    <div class="navigation_bar">
+        <nav class="navigation_list">
+            <a href="index.html"><i class="fa fa-fw fa-home"></i>Home</a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin-square"></i>LinkedIn</a>
+            <a class="active" href="contactMe.html"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+        </nav>
+    </div>
+    <div class="contact">
+        <h2>
+            Contact Me
+        </h2>
+        <div class="contact_table">
+            <form id="contact_form" action="handle_form.html" method="post">
+                <label for="firstName">First Name</label><br>
+                <input type="text" id="firstName" name="firstName" placeholder="your first name..."><br>
+                <label for="lastName">Last Name</label><br>
+                <input type="text" id="lastName" name="lastName" placeholder="your last name..."><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="your email..."><br>
+                <label for="subject">Subject</label><br>
+                <textarea id="subject" name="subject" placeholder="Please leave your comment..."></textarea><br>
+
+                <!--type="submit" or "reset" or "button" define the button type corresponding to different behavior
+                    after click on the button-->
+                <input type="submit" value="Submit"><br>
+            </form>
+        </div>
+    </div>
+    <div class="visitor_comments">
+        <ul class="comments">
+            
+        </ul>
+    </div>
+
+    <footer>
+        <hr>
+        &copy;<code>Copyright 2023, Victor.</code>
+    </footer>
+    <script type="text/javascript" src="js/master.js"></script>
+    <script type="text/javascript" src="js/visitors.js"></script>
+    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+              Host : "smtp.elasticemail.com",
+              Username : "username",
+              Password : "password",
+              To : 'them@website.com',
+              From : "you@isp.com",
+              Subject : "This is the subject",
+              Body : "And this is the body"
+            }).then(
+              message => alert("Your information has been submitted successfully!")
+            );
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
